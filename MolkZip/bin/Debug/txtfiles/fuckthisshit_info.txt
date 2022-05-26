@@ -1,0 +1,7 @@
+Archive:  C:/Users/Emir/Desktop/fuckthisshit.molk
+  Length     Date   Time    Name
+ --------    ----   ----    ----
+   141835  20-02-24 15:36   Users/Emir/Desktop/EmirCV.pdf
+        0  20-05-24 21:50   -
+ --------                   -------
+   141835                   2 files

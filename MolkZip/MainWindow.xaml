@@ -1,0 +1,274 @@
+﻿<Window x:Name="window" x:Class="MolkZip.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MolkZip"
+        Loaded="Window_Loaded"
+        mc:Ignorable="d"
+        Title="WinMolk" Height="450" Width="800"
+        Icon="assets/icon.png" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow" ResizeMode="CanMinimize"
+        xmlns:gif="clr-namespace:XamlAnimatedGif;assembly=XamlAnimatedGif" KeyDown="Window_KeyDown">
+
+    <Window.Resources>
+        <Style x:Key="MyFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Control}">
+                        <Grid Margin="3 2">
+                            <Rectangle Name="r1" StrokeThickness="1" Stroke="Black" StrokeDashArray="2 2"/>
+                            <Border Name="border" Width="{TemplateBinding ActualWidth}" Height="{TemplateBinding ActualHeight}"  CornerRadius="2" BorderThickness="1" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ShadowStyle">
+            <Setter Property="Control.Foreground" Value="Transparent" />
+        </Style>
+
+        <Style x:Key="DefaultButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="11px"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" 
+        				BorderThickness="1"
+        				Padding="4,2" 
+        				BorderBrush="DarkGray" 
+        				CornerRadius="3" 
+        				Background="{TemplateBinding Background}">
+                            <Grid >
+                                <ContentPresenter HorizontalAlignment="Center" 
+        	                           VerticalAlignment="Center" Name="contentShadow" 
+        					Style="{StaticResource ShadowStyle}">
+                                    <ContentPresenter.RenderTransform>
+                                        <TranslateTransform X="1.0" Y="1.0" />
+                                    </ContentPresenter.RenderTransform>
+                                </ContentPresenter>
+                                <ContentPresenter HorizontalAlignment="Center" 
+                                    VerticalAlignment="Center" Name="content"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#FFD45A15" />
+                                <Setter Property="Foreground" Value="#FF4788c8" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" >
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" >
+                                            <GradientStop Color="#FFFFD190" Offset="0.35"/>
+                                            <GradientStop Color="Orange" Offset="0.95"/>
+                                            <GradientStop Color="#FFFFD190" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter TargetName="content" Property="RenderTransform" >
+                                    <Setter.Value>
+                                        <TranslateTransform Y="1.0" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsDefaulted" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#FF282828" />
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#FF282828" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="Logo" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" 
+        				BorderThickness="1"
+        				Padding="4,2" 
+        				BorderBrush="Transparent" 
+        				CornerRadius="3" 
+        				Background="{TemplateBinding Background}">
+                            <Grid >
+                                <ContentPresenter HorizontalAlignment="Center" 
+        	                           VerticalAlignment="Center" Name="contentShadow" 
+        					Style="{StaticResource ShadowStyle}">
+                                    <ContentPresenter.RenderTransform>
+                                        <TranslateTransform X="1.0" Y="1.0" />
+                                    </ContentPresenter.RenderTransform>
+                                </ContentPresenter>
+                                <ContentPresenter HorizontalAlignment="Center" 
+                                    VerticalAlignment="Center" Name="content"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+
+
+    </Window.Resources>
+
+    <Grid Margin="0,0,0,20">
+        <Menu x:Name="menu" Height="20" VerticalAlignment="Top">
+            <MenuItem Header="_File">
+                <MenuItem x:Name="openMolkFile" Header="_Open Molk File"  Click="OpenMolkFile" InputGestureText="Ctrl+O"/>
+                <MenuItem x:Name="addFile" Header="Add _File"  Click="AddFile" InputGestureText="Ctrl+F"/>
+                <MenuItem x:Name="addDirectory" Header="Add _Directory"  Click="AddDirectory" InputGestureText="Ctrl+D"/>
+                <Separator></Separator>
+                <MenuItem x:Name="selectAll" Header="Select _All" Click="SelectAll" InputGestureText="Ctrl+A" IsEnabled="False"/>
+                <MenuItem x:Name="removeFile" Header="_Remove" Click="Remove" InputGestureText="Ctrl+R" IsEnabled="False"/>
+                <Separator></Separator>
+                <MenuItem Header="E_xit" Click="Exit" InputGestureText="Ctrl+X"/>
+            </MenuItem>
+
+            <MenuItem Header="_Options">
+                <MenuItem x:Name="DisplaySize" Header="_Diplay Size">
+                    <MenuItem x:Name="FO" Header="1 GB" IsCheckable="True" StaysOpenOnClick="True" Click="FirstOption"/>
+                    <MenuItem x:Name="SO" Header="5 GB" IsCheckable="True" StaysOpenOnClick="True" Click="SecondOption" IsChecked="True"/>
+                    <MenuItem x:Name="TO" Header="10 GB" IsCheckable="True" StaysOpenOnClick="True" Click="ThirdOption"/>
+                    <MenuItem x:Name="FUO" Header="20 GB" IsCheckable="True" StaysOpenOnClick="True" Click="FourthOption"/>
+                </MenuItem>
+            </MenuItem>
+
+            <MenuItem Header="_Help">
+                <MenuItem Header="View _Help" Click="Help"/>
+                <MenuItem Header="_About" Click="About"/>
+            </MenuItem>
+        </Menu>
+        <Grid Height="50" Margin="0,20,0,0" VerticalAlignment="Top" Background="#FFD8D8D8">
+
+
+            <Button Style="{StaticResource DefaultButton}" x:Name="zipButton" Content="Molk" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="80" Click="Button_Click_Molk" Background="#FF612583" FontSize="20" BorderBrush="#FF420066" Foreground="White">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <StackPanel>
+                            <TextBlock>Compress selected files</TextBlock>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button Style="{StaticResource DefaultButton}" x:Name="unzipButton" Content="Unmolk" HorizontalAlignment="Left" Margin="110,10,0,0" VerticalAlignment="Top" Width="80" Click="Button_Click_Unmolk" Background="#FF612583" FontSize="20" BorderBrush="#FF420066" Foreground="White">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <StackPanel>
+                            <TextBlock>Extract file</TextBlock>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button Style="{StaticResource DefaultButton}" x:Name="addButton" Content="Add" HorizontalAlignment="Left" Margin="210,10,0,0" VerticalAlignment="Top" Width="80" Click="Button_Click_Add" Background="#FF612583" FontSize="20" BorderBrush="#FF420066" Foreground="White">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <StackPanel>
+                            <TextBlock>Add selected files</TextBlock>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button Style="{StaticResource DefaultButton}" x:Name="rmvButton" Content="Remove" HorizontalAlignment="Left" Margin="310,10,0,0" VerticalAlignment="Top" Width="80" Click="Button_Click_Remove" Background="#FF612583" FontSize="20" BorderBrush="#FF420066" Foreground="White">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <StackPanel>
+                            <TextBlock>Remove selected files</TextBlock>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button Style="{StaticResource DefaultButton}" x:Name="openButton" Content="Open" HorizontalAlignment="Left" Margin="410,10,0,0" VerticalAlignment="Top" Width="80" Click="Button_Click_Open" Background="#FF612583" FontSize="20" BorderBrush="#FF420066" Foreground="White">
+                <Button.ToolTip>
+                    <ToolTip>
+                        <StackPanel>
+                            <TextBlock>Open Molk Files</TextBlock>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button Style="{StaticResource Logo}" x:Name="button" Margin="0,0,18,6" BorderBrush="#00707070" Height="38" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="74" Click="Button_Click_Logo">
+                <Button.Background>
+                    <ImageBrush ImageSource="LOGGA MOLK_Transparent.png"/>
+                </Button.Background>
+            </Button>
+
+        </Grid>
+
+
+        <TreeView x:Name="FolderView" Margin="0,70,0,159" BorderBrush="White">
+            <TreeView.Resources>
+                <Style TargetType="{x:Type TreeViewItem}">
+                    <Setter Property="HeaderTemplate">
+                        <Setter.Value>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Width="20" Margin="3" Source="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}}, Path=Tag, Converter={x:Static local:HeaderToImageConverter.Instance}}"></Image>
+                                    <TextBlock VerticalAlignment="Center" Text="{Binding}"></TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </TreeView.Resources>
+        </TreeView>
+        <Grid HorizontalAlignment="Left" Height="20" Margin="0,227,0,0" VerticalAlignment="Top" Width="794" Background="#FF612583">
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Selected Files to Compress" VerticalAlignment="Center" Foreground="White"/>
+        </Grid>
+        <ListView ItemsSource="{Binding}" x:Name="listView" HorizontalAlignment="Right" Width="784" Height="163" VerticalAlignment="Bottom" BorderBrush="#00000000" SelectionChanged="ListView_SelectionChanged" Margin="0,0,0,-21">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn x:Name="FileName" Header="Name" Width="200" DisplayMemberBinding="{Binding FileNameFIC}" />
+                    <GridViewColumn x:Name="FilePath" Header="Path" Width="373" DisplayMemberBinding="{Binding FilePathFIC}" />
+                    <GridViewColumn x:Name="FileType" Header="Type" Width="100" DisplayMemberBinding="{Binding FileTypeFIC}" />
+                    <GridViewColumn x:Name="FileSize" Header="Size" Width="100" DisplayMemberBinding="{Binding FileSizeFIC}" />
+
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style TargetType="{x:Type GridViewColumnHeader}">
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#FFD34C00" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
+
+                </GridView>
+            </ListView.View>
+
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FFD34C00" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="#FFA23A00" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListView.ItemContainerStyle>
+
+
+        </ListView>
+    </Grid>
+
+
+</Window>
+    
+    

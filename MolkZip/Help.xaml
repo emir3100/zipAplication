@@ -1,0 +1,166 @@
+﻿<Window x:Class="WinMolk.Help"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WinMolk"
+        mc:Ignorable="d"
+        Title="Help" Height="500" Width="500" Icon="Assets/icon.png" ResizeMode="CanMinimize" ShowInTaskbar="False" WindowStartupLocation="CenterScreen"
+        xmlns:gif="clr-namespace:XamlAnimatedGif;assembly=XamlAnimatedGif"
+        >
+
+    <Window.Resources>
+        <Style x:Key="MyFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Control}">
+                        <Grid Margin="3 2">
+                            <Rectangle Name="r1" StrokeThickness="1" Stroke="Black" StrokeDashArray="2 2"/>
+                            <Border Name="border" Width="{TemplateBinding ActualWidth}" Height="{TemplateBinding ActualHeight}"  CornerRadius="2" BorderThickness="1" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ShadowStyle">
+            <Setter Property="Control.Foreground" Value="Transparent" />
+        </Style>
+
+        <Style x:Key="DefaultButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="11px"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" 
+        				BorderThickness="1"
+        				Padding="4,2" 
+        				BorderBrush="DarkGray" 
+        				CornerRadius="3" 
+        				Background="{TemplateBinding Background}">
+                            <Grid >
+                                <ContentPresenter HorizontalAlignment="Center" 
+        	                           VerticalAlignment="Center" Name="contentShadow" 
+        					Style="{StaticResource ShadowStyle}">
+                                    <ContentPresenter.RenderTransform>
+                                        <TranslateTransform X="1.0" Y="1.0" />
+                                    </ContentPresenter.RenderTransform>
+                                </ContentPresenter>
+                                <ContentPresenter HorizontalAlignment="Center" 
+                                    VerticalAlignment="Center" Name="content"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#FFD45A15" />
+                                <Setter Property="Foreground" Value="#FF4788c8" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" >
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" >
+                                            <GradientStop Color="#FFFFD190" Offset="0.35"/>
+                                            <GradientStop Color="Orange" Offset="0.95"/>
+                                            <GradientStop Color="#FFFFD190" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter TargetName="content" Property="RenderTransform" >
+                                    <Setter.Value>
+                                        <TranslateTransform Y="1.0" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsDefaulted" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#FF282828" />
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#FF282828" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="Logo" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" 
+        				BorderThickness="1"
+        				Padding="4,2" 
+        				BorderBrush="Transparent" 
+        				CornerRadius="3" 
+        				Background="{TemplateBinding Background}">
+                            <Grid >
+                                <ContentPresenter HorizontalAlignment="Center" 
+        	                           VerticalAlignment="Center" Name="contentShadow" 
+        					Style="{StaticResource ShadowStyle}">
+                                    <ContentPresenter.RenderTransform>
+                                        <TranslateTransform X="1.0" Y="1.0" />
+                                    </ContentPresenter.RenderTransform>
+                                </ContentPresenter>
+                                <ContentPresenter HorizontalAlignment="Center" 
+                                    VerticalAlignment="Center" Name="content"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <ScrollViewer>
+        <Grid>
+            
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="0,20,0,0" TextWrapping="Wrap" Text="How to add and remove files?" VerticalAlignment="Top" FontSize="18" Foreground="#FF612583" FontWeight="Bold"/>
+            <Border Name="tut1" 
+              BorderThickness="2"
+              BorderBrush="#FFD34C00"
+              HorizontalAlignment="Center"
+              Height="150" 
+              Width="300" Margin="0,80,0,0" VerticalAlignment="Top">
+                <Image x:Name="image" gif:AnimationBehavior.SourceUri="Assets/tut1.gif" HorizontalAlignment="Stretch" Height="300" VerticalAlignment="Stretch" Width="300" />
+            </Border>
+            
+            <TextBlock x:Name="textBlock2" HorizontalAlignment="Center" Margin="0,250,0,0" TextWrapping="Wrap" Text="How to molk?" VerticalAlignment="Top" FontSize="18" Foreground="#FF612583" FontWeight="Bold"/>
+            <Border Name="tut2" 
+              BorderThickness="2"
+              BorderBrush="#FFD34C00"
+              HorizontalAlignment="Center"
+              Height="150" 
+              Width="300" Margin="0,300,0,0" VerticalAlignment="Top">
+                <Image x:Name="image2" gif:AnimationBehavior.SourceUri="Assets/tut2.gif" HorizontalAlignment="Stretch" Height="300" VerticalAlignment="Stretch" Width="300" />
+            </Border>
+            
+            <TextBlock x:Name="textBlock3" HorizontalAlignment="Center" Margin="0,480,0,0" TextWrapping="Wrap" Text="How to unmolk?" VerticalAlignment="Top" FontSize="18" Foreground="#FF612583" FontWeight="Bold"/>
+            <Border Name="tut3" 
+              BorderThickness="2"
+              BorderBrush="#FFD34C00"
+              HorizontalAlignment="Center"
+              Height="150" 
+              Width="300" Margin="0,540,0,0" VerticalAlignment="Top">
+                <Image x:Name="image3" gif:AnimationBehavior.SourceUri="Assets/tut3.gif" HorizontalAlignment="Stretch" Height="300" VerticalAlignment="Stretch" Width="300" />
+            </Border>
+
+            <Button Style="{StaticResource DefaultButton}" x:Name="CloseButton" Content="Close" HorizontalAlignment="Center" VerticalAlignment="Top" Width="75" Margin="0,750,0,0" Click="Button_Click_Close" Foreground="White" Background="#FF612583"/>
+
+            <Button Style="{StaticResource Logo}" Margin="0,0,10,10" BorderBrush="#00707070" Height="38" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="74" Click="Button_Click_Logo_About">
+                <Button.Background>
+                    <ImageBrush ImageSource="LOGGA MOLK_Transparent.png"/>
+                </Button.Background>
+            </Button>
+
+            <Image x:Name="spacer" HorizontalAlignment="Center" VerticalAlignment="Top" IsEnabled="False" Margin="0,900,0,0" />
+        </Grid>
+    </ScrollViewer>
+</Window>

@@ -1,0 +1,69 @@
+D:\repos\GUI DESIGN\MolkZip\MolkZip\obj\Debug\MolkZip.csprojAssemblyReference.cache
+D:\repos\GUI DESIGN\MolkZip\MolkZip\obj\Debug\MainWindow.g.cs
+D:\repos\GUI DESIGN\MolkZip\MolkZip\obj\Debug\App.g.cs
+D:\repos\GUI DESIGN\MolkZip\MolkZip\obj\Debug\MainWindow.baml
+D:\repos\GUI DESIGN\MolkZip\MolkZip\obj\Debug\MolkZip.csproj.GenerateResource.cache
+D:\repos\GUI DESIGN\MolkZip\MolkZip\obj\Debug\MolkZip.csproj.CoreCompileInputs.cache
+D:\repos\GUI DESIGN\MolkZip\MolkZip\bin\Debug\WinMolk.exe.config
+D:\repos\GUI DESIGN\MolkZip\MolkZip\bin\Debug\WinMolk.exe
+D:\repos\GUI DESIGN\MolkZip\MolkZip\bin\Debug\WinMolk.pdb
+D:\repos\GUI DESIGN\MolkZip\MolkZip\obj\Debug\WinMolk_MarkupCompile.cache
+D:\repos\GUI DESIGN\MolkZip\MolkZip\obj\Debug\WinMolk_MarkupCompile.lref
+D:\repos\GUI DESIGN\MolkZip\MolkZip\obj\Debug\WinMolk.g.resources
+D:\repos\GUI DESIGN\MolkZip\MolkZip\obj\Debug\WinMolk.Properties.Resources.resources
+D:\repos\GUI DESIGN\MolkZip\MolkZip\obj\Debug\WinMolk.exe
+D:\repos\GUI DESIGN\MolkZip\MolkZip\obj\Debug\WinMolk.pdb
+D:\repos\GUI DESIGN\MolkZip\MolkZip\bin\Debug\Microsoft.WindowsAPICodePack.dll
+D:\repos\GUI DESIGN\MolkZip\MolkZip\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+D:\repos\GUI DESIGN\MolkZip\MolkZip\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.dll
+D:\repos\GUI DESIGN\MolkZip\MolkZip\bin\Debug\Microsoft.WindowsAPICodePack.pdb
+D:\repos\GUI DESIGN\MolkZip\MolkZip\bin\Debug\Microsoft.WindowsAPICodePack.xml
+D:\repos\GUI DESIGN\MolkZip\MolkZip\bin\Debug\Microsoft.WindowsAPICodePack.Shell.pdb
+D:\repos\GUI DESIGN\MolkZip\MolkZip\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+D:\repos\GUI DESIGN\MolkZip\MolkZip\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.pdb
+D:\repos\GUI DESIGN\MolkZip\MolkZip\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.xml
+D:\repos\GUI DESIGN\MolkZip\MolkZip\obj\Debug\MolkZip.csproj.CopyComplete
+D:\repos\GUI DESIGN\MolkZip\MolkZip\obj\Debug\About.g.cs
+D:\repos\GUI DESIGN\MolkZip\MolkZip\obj\Debug\About.baml
+D:\repos\GUI DESIGN\MolkZip\MolkZip\obj\Debug\Help.g.cs
+D:\repos\GUI DESIGN\MolkZip\MolkZip\obj\Debug\Help.baml
+D:\repos\GUI DESIGN\MolkZip\MolkZip\bin\Debug\XamlAnimatedGif.dll
+D:\repos\GUI DESIGN\MolkZip\MolkZip\obj\Debug\Loading.g.cs
+D:\repos\GUI DESIGN\MolkZip\MolkZip\obj\Debug\Loading.baml
+D:\repos\GUI DESIGN\MolkZip\MolkZip\obj\Debug\OpenMolk.g.cs
+D:\repos\GUI DESIGN\MolkZip\MolkZip\obj\Debug\OpenMolk.baml
+C:\Repos\zipAplication\MolkZip\bin\Debug\WinMolk.exe.config
+C:\Repos\zipAplication\MolkZip\bin\Debug\WinMolk.exe
+C:\Repos\zipAplication\MolkZip\bin\Debug\WinMolk.pdb
+C:\Repos\zipAplication\MolkZip\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Repos\zipAplication\MolkZip\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Repos\zipAplication\MolkZip\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.dll
+C:\Repos\zipAplication\MolkZip\bin\Debug\XamlAnimatedGif.dll
+C:\Repos\zipAplication\MolkZip\bin\Debug\Microsoft.WindowsAPICodePack.pdb
+C:\Repos\zipAplication\MolkZip\bin\Debug\Microsoft.WindowsAPICodePack.xml
+C:\Repos\zipAplication\MolkZip\bin\Debug\Microsoft.WindowsAPICodePack.Shell.pdb
+C:\Repos\zipAplication\MolkZip\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+C:\Repos\zipAplication\MolkZip\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.pdb
+C:\Repos\zipAplication\MolkZip\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.xml
+C:\Repos\zipAplication\MolkZip\obj\Debug\MolkZip.csproj.AssemblyReference.cache
+C:\Repos\zipAplication\MolkZip\obj\Debug\MolkZip.csproj.SuggestedBindingRedirects.cache
+C:\Repos\zipAplication\MolkZip\obj\Debug\About.g.cs
+C:\Repos\zipAplication\MolkZip\obj\Debug\Help.g.cs
+C:\Repos\zipAplication\MolkZip\obj\Debug\Loading.g.cs
+C:\Repos\zipAplication\MolkZip\obj\Debug\MainWindow.g.cs
+C:\Repos\zipAplication\MolkZip\obj\Debug\OpenMolk.g.cs
+C:\Repos\zipAplication\MolkZip\obj\Debug\App.g.cs
+C:\Repos\zipAplication\MolkZip\obj\Debug\WinMolk_MarkupCompile.cache
+C:\Repos\zipAplication\MolkZip\obj\Debug\WinMolk_MarkupCompile.lref
+C:\Repos\zipAplication\MolkZip\obj\Debug\About.baml
+C:\Repos\zipAplication\MolkZip\obj\Debug\Help.baml
+C:\Repos\zipAplication\MolkZip\obj\Debug\Loading.baml
+C:\Repos\zipAplication\MolkZip\obj\Debug\MainWindow.baml
+C:\Repos\zipAplication\MolkZip\obj\Debug\OpenMolk.baml
+C:\Repos\zipAplication\MolkZip\obj\Debug\WinMolk.g.resources
+C:\Repos\zipAplication\MolkZip\obj\Debug\WinMolk.Properties.Resources.resources
+C:\Repos\zipAplication\MolkZip\obj\Debug\MolkZip.csproj.GenerateResource.cache
+C:\Repos\zipAplication\MolkZip\obj\Debug\MolkZip.csproj.CoreCompileInputs.cache
+C:\Repos\zipAplication\MolkZip\obj\Debug\MolkZip.csproj.CopyComplete
+C:\Repos\zipAplication\MolkZip\obj\Debug\WinMolk.exe
+C:\Repos\zipAplication\MolkZip\obj\Debug\WinMolk.pdb
